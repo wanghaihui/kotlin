@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.imagine.story.common.widget.FlingLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/girl_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <tcking.github.com.giraffeplayer2.VideoView
+            android:id="@+id/girl_video"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <ImageView android:id="@+id/girl_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</com.imagine.story.common.widget.FlingLayout>

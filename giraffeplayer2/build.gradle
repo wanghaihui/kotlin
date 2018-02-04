@@ -1,0 +1,30 @@
+apply plugin: 'com.android.library'
+
+
+android {
+    compileSdkVersion versions.compileSdk
+    buildToolsVersion versions.buildTools
+
+    defaultConfig {
+        minSdkVersion versions.minSdkVersion
+        targetSdkVersion versions.targetSdk
+        versionCode 21
+        versionName "0.1.14-full"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile "com.android.support:appcompat-v7:${versions.supportLibrary}"
+    compile 'com.github.tcking:viewquery:1.5'
+
+    compile 'com.github.tcking:ijkplayer-java:0.8.4-full'
+    compile 'com.github.tcking:ijkplayer-armv7a:0.8.4-full'
+}
+apply from: new File(projectDir, "gradle-on-demand.gradle")

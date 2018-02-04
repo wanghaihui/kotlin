@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="BlurringView">
+        <attr name="blurRadius" format="integer" />
+        <attr name="downSampleFactor" format="integer" />
+        <attr name="overlayColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="DrawerLayout">
+        <attr name="colorPrimaryDark" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="ScrollingImageView">
+        <attr name="speed" format="dimension" />
+        <attr name="src" format="reference" />
+    </declare-styleable>
+</resources>
