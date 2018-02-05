@@ -1,7 +1,6 @@
 package com.imagine.story.activity;
 
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
@@ -58,7 +57,12 @@ public class HomeActivity extends BaseActivity {
 
     private void loadData() {
         feeds = new ArrayList<>();
+        // 绿
         for (int i = 0; i < 11; i++) {
+            feeds.add(new Feed(UUID.randomUUID().toString(), FeedTypeEnum.image, getUrl(i + 1)));
+        }
+        // 黄
+        for (int i = 11; i < 15; i++) {
             feeds.add(new Feed(UUID.randomUUID().toString(), FeedTypeEnum.image, getUrl(i + 1)));
         }
     }
