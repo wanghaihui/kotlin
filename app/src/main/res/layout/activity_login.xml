@@ -11,6 +11,6 @@
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
         app:speed="1dp"
-        app:src="@mipmap/login_bg" />
+        app:src="@mipmap/ic_login_bg" />
 
 </LinearLayout>

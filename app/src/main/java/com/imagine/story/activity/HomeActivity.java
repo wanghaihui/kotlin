@@ -48,8 +48,8 @@ public class HomeActivity extends BaseActivity {
         loadData();
 
         feedAdapter = new FeedAdapter(feedRecyclerView, feeds);
-
         layoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
+        layoutManager.setGapStrategy(StaggeredGridLayoutManager.GAP_HANDLING_NONE);
         feedRecyclerView.setLayoutManager(layoutManager);
 
         feedRecyclerView.setAdapter(feedAdapter);
@@ -62,7 +62,7 @@ public class HomeActivity extends BaseActivity {
             feeds.add(new Feed(UUID.randomUUID().toString(), FeedTypeEnum.image, getUrl(i + 1)));
         }
         // 黄
-        for (int i = 11; i < 15; i++) {
+        for (int i = 11; i < 24; i++) {
             feeds.add(new Feed(UUID.randomUUID().toString(), FeedTypeEnum.image, getUrl(i + 1)));
         }
     }

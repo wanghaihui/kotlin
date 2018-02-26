@@ -29,6 +29,7 @@ android {
         debug {
             debuggable true
             minifyEnabled false
+            buildConfigField "String", "WS_HOST", project.ext.debugWSHost
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
 
@@ -36,6 +37,7 @@ android {
             debuggable false
             minifyEnabled true
             shrinkResources true
+            buildConfigField "String", "WS_HOST", project.ext.releaseWSHost
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -71,6 +73,7 @@ dependencies {
     annotationProcessor "com.jakewharton:butterknife-compiler:${versions.butterknife}"
 
     implementation project(':giraffeplayer2')
+    implementation project(':libyuv')
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'

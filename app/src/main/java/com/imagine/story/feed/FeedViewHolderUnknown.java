@@ -24,7 +24,7 @@ public class FeedViewHolderUnknown extends FeedViewHolderBase {
     }
 
     @Override
-    protected void bindContentView() {
+    protected void bindContentView(int position) {
 
     }
 }

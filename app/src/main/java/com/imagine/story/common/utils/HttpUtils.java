@@ -5,7 +5,8 @@ import java.net.URLDecoder;
 import java.net.URLEncoder;
 
 /**
- * Created by meijian on 2018/1/18.
+ * Created by conquer on 2018/1/18.
+ *
  */
 
 public class HttpUtils {

@@ -1,6 +1,7 @@
 package com.imagine.story.feed;
 
 import android.support.v7.widget.RecyclerView;
+import android.util.SparseIntArray;
 
 import com.imagine.story.R;
 import com.imagine.story.adapter.BaseMultiItemAdapter;
@@ -18,6 +19,8 @@ import java.util.Map;
 public class FeedAdapter extends BaseMultiItemAdapter<Feed, BaseViewHolder> {
 
     private Map<Class<? extends FeedViewHolderBase>, Integer> holderViewType;
+
+    private SparseIntArray heightCache = new SparseIntArray();
 
     public FeedAdapter(RecyclerView recyclerView, List<Feed> data) {
         super(recyclerView, data);
@@ -41,5 +44,9 @@ public class FeedAdapter extends BaseMultiItemAdapter<Feed, BaseViewHolder> {
     @Override
     protected String getItemKey(Feed feed) {
         return feed.getFeedId();
+    }
+
+    public SparseIntArray getHeightCache() {
+        return heightCache;
     }
 }

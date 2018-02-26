@@ -41,6 +41,12 @@ allprojects {
     project.ext {
         versionCode = 1
         versionName = "1.0.0"
+
+        debugWSHost = "\"wss://game.iluoy.com\""
+        releaseWSHost = "\"wss://api.91enjoylife.com\""
+
+        debugApiHost = "\"https://game.iluoy.com\""
+        releaseApiHost = "\"https://api.91enjoylife.com\""
     }
 }
 

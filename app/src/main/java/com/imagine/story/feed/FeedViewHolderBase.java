@@ -1,6 +1,7 @@
 package com.imagine.story.feed;
 
 import android.content.Context;
+import android.util.SparseArray;
 import android.view.View;
 import android.widget.FrameLayout;
 
@@ -31,7 +32,7 @@ public abstract class FeedViewHolderBase extends RecyclerViewHolder<BaseAdapter,
     // 在该接口中根据layout对各控件成员变量赋值
     protected abstract void inflateContentView();
 
-    protected abstract void bindContentView();
+    protected abstract void bindContentView(int position);
 
     public FeedViewHolderBase(BaseAdapter adapter) {
         super(adapter);
@@ -44,7 +45,7 @@ public abstract class FeedViewHolderBase extends RecyclerViewHolder<BaseAdapter,
         feed = data;
 
         inflate();
-        refresh();
+        refresh(position);
     }
 
     protected final void inflate() {
@@ -57,9 +58,9 @@ public abstract class FeedViewHolderBase extends RecyclerViewHolder<BaseAdapter,
         inflateContentView();
     }
 
-    protected final void refresh() {
+    protected final void refresh(int position) {
         // 绑定内容View
-        bindContentView();
+        bindContentView(position);
     }
 
     // 根据layout id查找对应的控件
