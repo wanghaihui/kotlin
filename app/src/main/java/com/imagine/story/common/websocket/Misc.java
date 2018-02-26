@@ -10,11 +10,6 @@ import java.util.Collection;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * Created by conquer on 2018/2/9.
- *
- */
-
 class Misc {
     // 安全的随机数
     private static final SecureRandom sRandom = new SecureRandom();

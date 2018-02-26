@@ -1,10 +1,5 @@
 package com.imagine.story.common.websocket;
 
-/**
- * Created by conquer on 2018/2/9.
- *
- */
-
 public enum  WebSocketState {
     /**
      * The initial state of a {@link WebSocket} instance.

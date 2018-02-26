@@ -4,6 +4,7 @@ import android.app.Application;
 
 /**
  * Created by conquer on 2018/1/7.
+ *
  */
 
 public class MainApplication extends Application {

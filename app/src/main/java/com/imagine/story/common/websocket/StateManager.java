@@ -1,8 +1,6 @@
 package com.imagine.story.common.websocket;
 
 /**
- * Created by conquer on 2018/2/9.
- *
  * 状态管理器
  */
 
