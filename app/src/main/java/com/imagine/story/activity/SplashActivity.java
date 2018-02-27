@@ -1,7 +1,6 @@
 package com.imagine.story.activity;
 
-import android.content.Intent;
-
+import com.imagine.story.IntentManager;
 import com.imagine.story.R;
 import com.imagine.story.common.base.BaseActivity;
 
@@ -18,20 +17,12 @@ public class SplashActivity extends BaseActivity {
         setContentView(R.layout.activity_splash);
         ButterKnife.bind(this);
 
-        goLogin();
-        // goHome();
-    }
-
-    private void goHome() {
-        Intent intent = new Intent(this, HomeActivity.class);
-        startActivity(intent);
+        IntentManager.goLogin(this);
         finish();
     }
 
-    private void goLogin() {
-        Intent intent = new Intent(this, LoginActivity.class);
-        startActivity(intent);
-        finish();
-    }
+
+
+
 
 }
