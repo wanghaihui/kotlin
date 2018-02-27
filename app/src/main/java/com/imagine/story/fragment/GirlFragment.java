@@ -31,6 +31,7 @@ import tv.danmaku.ijk.media.player.IjkTimedText;
 
 /**
  * Created by conquer on 2018/1/19.
+ *
  */
 
 public class GirlFragment extends Fragment implements FlingLayout.OnScrollListener {

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item>
+        <bitmap android:src="@drawable/ic_loading_bg" />
+    </item>
+
+    <!-- 108 = 84 + 24(status bar) -->
+    <item android:top="108dp">
+        <bitmap android:src="@drawable/ic_logo"
+            android:gravity="top|center_horizontal">
+        </bitmap>
+    </item>
+</layer-list>

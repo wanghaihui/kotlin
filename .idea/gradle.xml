@@ -10,7 +10,6 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/giraffeplayer2" />
-            <option value="$PROJECT_DIR$/libyuv" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

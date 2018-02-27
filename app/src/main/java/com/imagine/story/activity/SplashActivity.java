@@ -18,7 +18,8 @@ public class SplashActivity extends BaseActivity {
         setContentView(R.layout.activity_splash);
         ButterKnife.bind(this);
 
-        goHome();
+        goLogin();
+        // goHome();
     }
 
     private void goHome() {
@@ -26,4 +27,11 @@ public class SplashActivity extends BaseActivity {
         startActivity(intent);
         finish();
     }
+
+    private void goLogin() {
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
 }

@@ -10,7 +10,7 @@
 
     <style name="splash" parent="AppTheme">
         <item name="android:windowNoTitle">true</item>
-        <item name="android:windowBackground">@mipmap/ic_loading</item>
+        <item name="android:windowBackground">@drawable/ic_loading</item>
     </style>
 
 </resources>

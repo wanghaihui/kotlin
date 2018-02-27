@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_logining">
 
     <com.imagine.story.common.view.ScrollingImageView
         android:id="@+id/scrolling_background"
@@ -11,6 +11,29 @@
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
         app:speed="1dp"
-        app:src="@mipmap/ic_login_bg" />
+        app:src="@mipmap/ic_login_bg"
+        android:visibility="gone"/>
 
-</LinearLayout>
+    <FrameLayout android:id="@+id/weChat"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_marginBottom="64dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_gravity="bottom"
+        android:background="@drawable/btn_white_bg">
+
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@mipmap/ic_we_chat"
+            android:drawableStart="@mipmap/ic_we_chat"
+            android:drawablePadding="8dp"
+            android:layout_gravity="center"
+            android:text="@string/str_wx_login"
+            android:textColor="@color/color_19e62b" />
+
+    </FrameLayout>
+
+</FrameLayout>

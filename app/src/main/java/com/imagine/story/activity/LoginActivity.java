@@ -22,7 +22,12 @@ public class LoginActivity extends BaseActivity {
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
 
+        // startScroll();
+    }
+
+    private void startScroll() {
         scrollingBackground.stop();
         scrollingBackground.start();
     }
+
 }
