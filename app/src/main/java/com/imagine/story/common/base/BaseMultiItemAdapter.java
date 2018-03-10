@@ -1,4 +1,4 @@
-package com.imagine.story.adapter;
+package com.imagine.story.common.base;
 
 import android.annotation.SuppressLint;
 import android.support.annotation.LayoutRes;
@@ -7,7 +7,6 @@ import android.util.SparseArray;
 import android.util.SparseIntArray;
 import android.view.ViewGroup;
 
-import com.imagine.story.viewholder.BaseViewHolder;
 import com.imagine.story.viewholder.RecyclerViewHolder;
 
 import java.lang.reflect.Constructor;

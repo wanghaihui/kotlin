@@ -15,7 +15,6 @@ class ConnectThread extends WebSocketThread {
         }
     }
 
-
     private void handleError(WebSocketException cause) {
         ListenerManager manager = mWebSocket.getListenerManager();
 

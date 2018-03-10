@@ -21,8 +21,4 @@ public class SplashActivity extends BaseActivity {
         finish();
     }
 
-
-
-
-
 }

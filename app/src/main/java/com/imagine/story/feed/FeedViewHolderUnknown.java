@@ -1,7 +1,7 @@
 package com.imagine.story.feed;
 
 import com.imagine.story.R;
-import com.imagine.story.adapter.BaseAdapter;
+import com.imagine.story.common.base.BaseAdapter;
 
 /**
  * Created by meijian on 2018/2/4.

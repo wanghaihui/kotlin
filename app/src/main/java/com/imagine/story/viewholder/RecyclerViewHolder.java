@@ -2,6 +2,8 @@ package com.imagine.story.viewholder;
 
 import android.support.v7.widget.RecyclerView;
 
+import com.imagine.story.common.base.BaseViewHolder;
+
 /**
  * Created by conquer on 2018/2/4.
  *

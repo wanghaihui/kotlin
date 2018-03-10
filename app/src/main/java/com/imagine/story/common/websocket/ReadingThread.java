@@ -1,5 +1,7 @@
 package com.imagine.story.common.websocket;
 
+import android.util.Log;
+
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InterruptedIOException;
@@ -52,6 +54,7 @@ class ReadingThread extends WebSocketThread {
 
     private void main() {
         mWebSocket.onReadingThreadStarted();
+        Log.d(WebSocket.TAG, "reading thread started");
 
         while (true) {
             synchronized (this) {
@@ -65,9 +68,11 @@ class ReadingThread extends WebSocketThread {
 
             if (frame == null) {
                 // Something unexpected happened.
+                Log.e(WebSocket.TAG, "read frame is null");
                 break;
             }
 
+            Log.d(WebSocket.TAG, frame.toString());
             // Handle the frame.
             boolean keepReading = handleFrame(frame);
 

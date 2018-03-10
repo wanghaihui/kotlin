@@ -1,4 +1,4 @@
-package com.imagine.story.viewholder;
+package com.imagine.story.common.base;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;

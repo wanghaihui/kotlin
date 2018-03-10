@@ -1,5 +1,7 @@
 package com.imagine.story.common.websocket;
 
+import android.util.Log;
+
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.IOException;
@@ -15,6 +17,8 @@ import java.util.concurrent.Future;
  * 核心驱动力--最关键的类
  */
 public class WebSocket {
+    public static final String TAG = WebSocket.class.getSimpleName();
+
     private static final long DEFAULT_CLOSE_DELAY = 10 * 1000L;
 
     private final WebSocketFactory mWebSocketFactory;
@@ -159,6 +163,8 @@ public class WebSocket {
 
             // Perform WebSocket handshake
             headers = shakeHands();
+
+            Log.d(TAG, "hand shake successful");
         } catch (WebSocketException e) {
             // Close the socket.
             mSocketConnector.closeSilently();
@@ -184,6 +190,7 @@ public class WebSocket {
         mListenerManager.callOnStateChanged(WebSocketState.OPEN);
 
         // Start threads that communicate with the server.
+        Log.d(TAG, "start reading and writing threads");
         startThreads();
 
         return this;
@@ -313,6 +320,13 @@ public class WebSocket {
             mReadingThread = readingThread;
             mWritingThread = writingThread;
         }
+
+        // Execute onThreadCreated of the listeners.
+        readingThread.callOnThreadCreated();
+        writingThread.callOnThreadCreated();
+
+        readingThread.start();
+        writingThread.start();
     }
 
     private void stopThreads(long closeDelay) {
@@ -460,7 +474,7 @@ public class WebSocket {
             mReadingThreadFinished = true;
             mServerCloseFrame = closeFrame;
 
-            if (mWritingThreadFinished == false) {
+            if (!mWritingThreadFinished) {
                 // Wait for the writing thread to finish.
                 return;
             }

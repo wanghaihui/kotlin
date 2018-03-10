@@ -4,8 +4,8 @@ import android.support.v7.widget.RecyclerView;
 import android.util.SparseIntArray;
 
 import com.imagine.story.R;
-import com.imagine.story.adapter.BaseMultiItemAdapter;
-import com.imagine.story.viewholder.BaseViewHolder;
+import com.imagine.story.common.base.BaseMultiItemAdapter;
+import com.imagine.story.common.base.BaseViewHolder;
 
 import java.util.HashMap;
 import java.util.List;

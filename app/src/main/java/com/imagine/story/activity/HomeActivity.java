@@ -6,6 +6,10 @@ import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
 
 import com.imagine.story.R;
+import com.imagine.story.adapter.HeaderAdapter;
+import com.imagine.story.common.base.BaseRecyclerView;
+import com.imagine.story.common.base.BaseRefreshLayout;
+import com.imagine.story.common.widget.MatchPopupWindow;
 import com.imagine.story.feed.FeedAdapter;
 import com.imagine.story.feed.Feed;
 import com.imagine.story.common.base.BaseActivity;
@@ -19,16 +23,20 @@ import java.util.UUID;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class HomeActivity extends BaseActivity {
+public class HomeActivity extends BaseActivity implements BaseRecyclerView.ILoadListener {
     private static final String TAG = HomeActivity.class.getSimpleName();
 
     @BindView(R.id.drawer)
     DrawerLayout drawer;
 
-    @BindView(R.id.feed_recycler_view)
+    @BindView(R.id.feed_refresh_layout)
+    BaseRefreshLayout feedRefreshLayout;
+    @BindView(R.id.recycler_view)
     RecyclerView feedRecyclerView;
     StaggeredGridLayoutManager layoutManager;
     FeedAdapter feedAdapter;
+
+    HeaderAdapter headerAdapter;
 
     private List<Feed> feeds;
 
@@ -47,6 +55,7 @@ public class HomeActivity extends BaseActivity {
 
         loadData();
 
+        feedRefreshLayout.setLoadListener(this);
         feedAdapter = new FeedAdapter(feedRecyclerView, feeds);
         layoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
         layoutManager.setGapStrategy(StaggeredGridLayoutManager.GAP_HANDLING_NONE);
@@ -57,12 +66,7 @@ public class HomeActivity extends BaseActivity {
 
     private void loadData() {
         feeds = new ArrayList<>();
-        // 绿
-        for (int i = 0; i < 11; i++) {
-            feeds.add(new Feed(UUID.randomUUID().toString(), FeedTypeEnum.image, getUrl(i + 1)));
-        }
-        // 黄
-        for (int i = 11; i < 24; i++) {
+        for (int i = 0; i < 31; i++) {
             feeds.add(new Feed(UUID.randomUUID().toString(), FeedTypeEnum.image, getUrl(i + 1)));
         }
     }
@@ -71,4 +75,22 @@ public class HomeActivity extends BaseActivity {
         return Config.BASE_IMAGE_URL + prefix + Config.IMAGE_URL_SUFFIX;
     }
 
+    private void showMatchPage() {
+        MatchPopupWindow matchPopupWindow = new MatchPopupWindow(this);
+        matchPopupWindow.setBgUrl("http://resource.91enjoylife.com/uploads/game/caige/bg_img.png");
+        matchPopupWindow.setAvatarUrl("http://resource.91enjoylife.com/uploads/game/caige/cover.png");
+        matchPopupWindow.createPopupWindow();
+        matchPopupWindow.setAnchorView(drawer);
+        matchPopupWindow.showAsDropDown();
+    }
+
+    @Override
+    public void onRefresh() {
+        feedRefreshLayout.setRefreshing(false);
+    }
+
+    @Override
+    public void onLoadMore() {
+
+    }
 }

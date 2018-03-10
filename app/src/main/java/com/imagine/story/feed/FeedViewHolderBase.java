@@ -1,13 +1,12 @@
 package com.imagine.story.feed;
 
 import android.content.Context;
-import android.util.SparseArray;
 import android.view.View;
 import android.widget.FrameLayout;
 
 import com.imagine.story.R;
-import com.imagine.story.adapter.BaseAdapter;
-import com.imagine.story.viewholder.BaseViewHolder;
+import com.imagine.story.common.base.BaseAdapter;
+import com.imagine.story.common.base.BaseViewHolder;
 import com.imagine.story.viewholder.RecyclerViewHolder;
 
 /**

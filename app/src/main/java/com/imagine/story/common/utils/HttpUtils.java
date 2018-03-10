@@ -1,6 +1,6 @@
 package com.imagine.story.common.utils;
 
-import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
 
@@ -10,13 +10,13 @@ import java.net.URLEncoder;
  */
 
 public class HttpUtils {
-    public static final String UTF_8 = "UTF-8";
+    private static final String UTF_8 = "UTF-8";
 
-    public static String decode(String encode) throws IOException {
+    public static String decode(String encode) throws UnsupportedEncodingException {
         return URLDecoder.decode(encode, UTF_8);
     }
 
-    public static String encode(String parameter) throws IOException{
+    public static String encode(String parameter) throws UnsupportedEncodingException {
         return URLEncoder.encode(parameter, UTF_8);
     }
 }

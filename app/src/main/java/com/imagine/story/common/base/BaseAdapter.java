@@ -1,12 +1,10 @@
-package com.imagine.story.adapter;
+package com.imagine.story.common.base;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-import com.imagine.story.viewholder.BaseViewHolder;
 
 import java.util.List;
 

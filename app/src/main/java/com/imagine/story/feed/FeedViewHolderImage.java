@@ -12,7 +12,7 @@ import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.transition.Transition;
 import com.imagine.story.R;
 import com.imagine.story.activity.ShortVideoActivity;
-import com.imagine.story.adapter.BaseAdapter;
+import com.imagine.story.common.base.BaseAdapter;
 import com.imagine.story.common.glide.GlideApp;
 import com.imagine.story.common.utils.ScreenUtils;
 

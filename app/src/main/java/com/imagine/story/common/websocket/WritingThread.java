@@ -1,5 +1,7 @@
 package com.imagine.story.common.websocket;
 
+import android.util.Log;
+
 import java.io.IOException;
 import java.util.LinkedList;
 
@@ -53,6 +55,7 @@ class WritingThread extends WebSocketThread {
 
     private void main() {
         mWebSocket.onWritingThreadStarted();
+        Log.d(WebSocket.TAG, "writing thread started");
 
         while (true) {
             // Wait for frames to be queued.
