@@ -7,8 +7,6 @@ import android.util.SparseArray;
 import android.util.SparseIntArray;
 import android.view.ViewGroup;
 
-import com.imagine.story.viewholder.RecyclerViewHolder;
-
 import java.lang.reflect.Constructor;
 import java.util.HashMap;
 import java.util.List;
@@ -29,12 +27,12 @@ public abstract class BaseMultiItemAdapter<T, K extends BaseViewHolder> extends 
     /**
      * viewType->view holder class
      */
-    private SparseArray<Class<? extends RecyclerViewHolder>> holderClasses;
+    private SparseArray<Class<? extends com.imagine.story.viewholder.RecyclerViewHolder>> holderClasses;
 
     /**
      * viewType->view holder instance
      */
-    private Map<Integer, Map<String, RecyclerViewHolder>> multiTypeViewHolders;
+    private Map<Integer, Map<String, com.imagine.story.viewholder.RecyclerViewHolder>> multiTypeViewHolders;
 
     /**
      * get view type from data item
@@ -58,7 +56,7 @@ public abstract class BaseMultiItemAdapter<T, K extends BaseViewHolder> extends 
      * @param viewHolderClass
      */
     @SuppressLint("UseSparseArrays")
-    protected void addItemType(int type, @LayoutRes int layoutResId, Class<? extends RecyclerViewHolder> viewHolderClass) {
+    protected void addItemType(int type, @LayoutRes int layoutResId, Class<? extends com.imagine.story.viewholder.RecyclerViewHolder> viewHolderClass) {
         // layouts
         if (layouts == null) {
             layouts = new SparseIntArray();
@@ -88,15 +86,15 @@ public abstract class BaseMultiItemAdapter<T, K extends BaseViewHolder> extends 
         final String key = getItemKey(item);
         final int viewType = baseHolder.getItemViewType();
 
-        RecyclerViewHolder h = multiTypeViewHolders.get(viewType).get(key);
+        com.imagine.story.viewholder.RecyclerViewHolder h = multiTypeViewHolders.get(viewType).get(key);
         if (h == null) {
             try {
-                Class<? extends RecyclerViewHolder> cls = holderClasses.get(viewType);
+                Class<? extends com.imagine.story.viewholder.RecyclerViewHolder> cls = holderClasses.get(viewType);
                 // 第一个显式的构造函数
                 Constructor c = cls.getDeclaredConstructors()[0];
                 c.setAccessible(true);
 
-                h = (RecyclerViewHolder) c.newInstance(this);
+                h = (com.imagine.story.viewholder.RecyclerViewHolder) c.newInstance(this);
                 multiTypeViewHolders.get(viewType).put(key, h);
             } catch (Exception e) {
                 e.printStackTrace();

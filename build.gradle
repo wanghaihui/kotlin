@@ -12,7 +12,7 @@ buildscript {
             'kotlin'        : '1.2.10',
             'retrofit'      : '2.3.0',
             'okhttp'        : '3.7.0',
-            'multidex'      : '1.0.2',
+            'multidex'      : '1.0.3',
             'supportLibrary': '27.0.2'
     ]
     

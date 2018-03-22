@@ -6,7 +6,6 @@ import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
 
 import com.imagine.story.R;
-import com.imagine.story.adapter.HeaderAdapter;
 import com.imagine.story.common.base.BaseRecyclerView;
 import com.imagine.story.common.base.BaseRefreshLayout;
 import com.imagine.story.common.widget.MatchPopupWindow;
@@ -35,8 +34,6 @@ public class HomeActivity extends BaseActivity implements BaseRecyclerView.ILoad
     RecyclerView feedRecyclerView;
     StaggeredGridLayoutManager layoutManager;
     FeedAdapter feedAdapter;
-
-    HeaderAdapter headerAdapter;
 
     private List<Feed> feeds;
 

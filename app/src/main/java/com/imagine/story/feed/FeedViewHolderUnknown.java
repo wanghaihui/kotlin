@@ -4,7 +4,8 @@ import com.imagine.story.R;
 import com.imagine.story.common.base.BaseAdapter;
 
 /**
- * Created by meijian on 2018/2/4.
+ * Created by conquer on 2018/2/4.
+ *
  */
 
 public class FeedViewHolderUnknown extends FeedViewHolderBase {
