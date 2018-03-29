@@ -1,3 +1,4 @@
 include ':app'
 include ':giraffeplayer2'
+include ':gpuimage'
 // include ':libyuv'
